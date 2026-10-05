@@ -1,0 +1,49 @@
+import { Account } from "./account";
+
+export const accounts:Account[] = [
+  {
+    "id": 1,
+    "accountNo": "ACC10001",
+    "holderName": "Rahul Sharma",
+    "balance": 45250.75,
+    "accountType": "savings",
+    "isActive": true,
+    "createdAt": "2026-01-15T10:30:00Z"
+  },
+  {
+    "id": 2,
+    "accountNo": "ACC10002",
+    "holderName": "Priya Patel",
+    "balance": 125000.00,
+    "accountType": "current",
+    "isActive": true,
+    "createdAt": "2026-02-20T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "accountNo": "ACC10003",
+    "holderName": "Amit Verma",
+    "balance": 250000.50,
+    "accountType": "fixed",
+    "isActive": true,
+    "createdAt": "2026-03-10T14:45:00Z"
+  },
+  {
+    "id": 4,
+    "accountNo": "ACC10004",
+    "holderName": "Sneha Kapoor",
+    "balance": 18750.25,
+    "accountType": "savings",
+    "isActive": false,
+    "createdAt": "2025-11-05T11:20:00Z"
+  },
+  {
+    "id": 5,
+    "accountNo": "ACC10005",
+    "holderName": "Vikram Singh",
+    "balance": 98500.00,
+    "accountType": "current",
+    "isActive": true,
+    "createdAt": "2026-04-18T16:10:00Z"
+  }
+]

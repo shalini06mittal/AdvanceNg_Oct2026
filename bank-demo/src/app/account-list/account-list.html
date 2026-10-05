@@ -1,0 +1,19 @@
+<h3>Accounts</h3>
+
+<!-- <div *ngIf="accountlist().length == 0">
+    <p>No Accounts yet</p>
+</div> -->
+
+@if(accountlist().length === 0){
+    <p>No Accounts yet!!!</p>
+}
+
+<div *ngFor="let acc of accountlist()">
+    <app-account-detail [account]="acc"></app-account-detail>
+</div>
+
+@for(acc of accountlist(); track acc.id){
+<div>
+ <app-account-detail [account]="acc"></app-account-detail>
+</div>
+}
