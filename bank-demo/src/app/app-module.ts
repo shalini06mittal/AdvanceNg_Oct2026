@@ -6,10 +6,16 @@ import { AccountList } from './account-list/account-list';
 import { AccountDetail } from './account-detail/account-detail';
 import { provideHttpClient } from '@angular/common/http';
 import { Signals } from './signals/signals';
+import { Empform } from './empform/empform';
+import { Header } from './header/header';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmpReactiveForm } from './emp-reactive-form/emp-reactive-form';
 
 @NgModule({
-  declarations: [App, AccountList, AccountDetail, Signals],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [App, AccountList, AccountDetail, Signals, Empform, Header, EmpReactiveForm],
+  imports: [BrowserModule, AppRoutingModule, FormsModule,
+      ReactiveFormsModule
+  ],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })

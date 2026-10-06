@@ -1,0 +1,87 @@
+<h3>Add Employee - Reactive Way</h3>
+
+<!-- {{name.value}}
+<form>
+    <input type="text" class="form-control"
+    placeholder="enter name"
+    [formControl] = "name"
+     id="">
+</form> -->
+
+<!-- <p>{{form.status|json}}</p>
+
+<form [formGroup]="form">
+    <input type="text" class="form-control" 
+    [class.is-invalid]="name.touched || name.invalid"
+    placeholder="enter name"
+    formControlName = "name"
+     id="">
+    <div *ngIf="name.touched">
+            <div *ngIf="name.errors && (name.invalid)">
+                <small class="text-danger" *ngIf="name.errors['required']">
+                    ename required </small>
+            </div>
+        </div>
+     <input type="text" class="form-control"
+    placeholder="enter phone"
+    formControlName = "phone"
+     id="">
+     <div *ngIf="form.controls['phone'].touched && form.controls['phone'].errors && (form.controls['phone'].invalid)">
+                <small class="text-danger" *ngIf="form.controls['phone'].errors['required']">
+                    phone required </small>
+                <small class="text-danger" *ngIf="form.controls['phone'].errors['pattern']">
+                    10-digits ONLY please</small>
+    </div>
+    <input type="text" class="form-control"
+    placeholder="enter password"
+    formControlName = "password"
+     id="">
+     <div *ngIf="password.touched && password.errors && password.invalid">
+                <small class="text-danger" *ngIf="password.errors['required']">
+                    password required </small>
+                <small class="text-danger" *ngIf="password.errors['needsExclamation']">
+                    password should have ! mark </small>
+    </div>
+</form> -->
+
+
+<h1>Reactive Forms</h1>
+<!-- <h3>{{empform.value | json}}</h3>
+<h3>{{empform.status }}</h3> -->
+<form [formGroup]="empform" (ngSubmit)="onSubmit()">
+<div class="mb-3">
+    <input type="text" class="form-control"
+        [ngClass]="{'is-invalid':empform.controls['ename'].invalid && empform.controls['ename'].touched}"
+        formControlName="ename" placeholder="Enter name" />
+    <div *ngIf="empform.controls['ename'].invalid && empform.controls['ename'].touched">
+        <span class="text-danger" *ngIf="empform.controls['ename'].hasError('required')">Name is required</span>
+        <span class="text-danger" *ngIf="empform.controls['ename'].hasError('minlength')">length 5</span>
+    </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" [ngClass]="{'is-invalid':email.invalid && email.touched}"
+            formControlName="email" placeholder="Enter email" />
+        <div *ngIf="email.touched && email.invalid && email.hasError('required')">
+            <span class="text-danger">Email is required</span>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" [ngClass]="{'is-invalid':password.invalid && password.touched}"
+            formControlName="password" placeholder="Enter password" />
+        <div *ngIf="password.touched && password.invalid && password.hasError('needsExclamation')">
+            <span class="text-danger">! is required</span>
+        </div>
+    </div>
+    <div [formGroup]="address">
+        <div class="mb-3">
+            <input type="text" class="form-control" formControlName="city" placeholder="Enter city" />
+            <div *ngIf="city.touched && city.invalid && city.hasError('required')">
+                <span class="text-danger">It is required</span>
+            </div>
+        </div>
+    </div>
+    <button type='submit'>Submit</button>
+</form>
+
+<input type="text" class="form-control" [formControl]="subsemail" placeholder="enter email to subscribe">
+<button (click)="subscribe()">Subscribe</button>

@@ -1,0 +1,123 @@
+<p>deferred works!</p>
+
+<h1>Lorem Ipsum</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+
+    <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <h2>More Content</h2>
+
+    <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur.
+    </p>
+
+    <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </p>
+
+    <p>
+        Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+    </p>
+    <h1>Lorem Ipsum</h1>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+
+    <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat.
+    </p>
+
+    <h2>More Content</h2>
+
+    <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur.
+    </p>
+
+    <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+        officia deserunt mollit anim id est laborum.
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </p>
+
+    <p>
+        Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </p>
+
+    <p>
+        Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </p>
+
+    <p>
+        Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </p>
+
+    <p>
+        Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+    </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+    </p>
+
+    <p>
+        Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+        Duis sagittis ipsum. Praesent mauris.
+    </p>
+<!-- <app-comment></app-comment> -->
+ <!-- <div style="height: 2000px; background: lightgray;">
+    Scroll down...
+</div> -->
+
+<img
+  ngSrc="assets/img1.jpeg"
+  width="800"
+  height="500"
+  alt="Deferred loading image"
+>
+
+@defer(on viewport) {   
+  <app-comment></app-comment>
+} @placeholder {
+  <p>Future comments</p>
+} @loading (minimum 2s) {
+  <p>Loading comments...</p>
+}

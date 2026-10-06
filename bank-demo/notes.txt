@@ -1,0 +1,9 @@
+1. Zoneless Change Detection :
+
+Ng 22 does not has a zone.js file. Hence angular will only schedule change detection if it receievs specific angular nottfications:
+-> a signal
+-> even handler runs
+-> AsyncPipe
+-> ng lifecylr apis
+
+HTTP response-> observable emits -> subscribe callback -> alist = accounts
