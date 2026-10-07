@@ -10,12 +10,20 @@ import { Empform } from './empform/empform';
 import { Header } from './header/header';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmpReactiveForm } from './emp-reactive-form/emp-reactive-form';
+import { FormBuilderDemo } from './form-builder-demo/form-builder-demo';
 
 @NgModule({
-  declarations: [App, AccountList, AccountDetail, Signals, Empform, Header, EmpReactiveForm],
-  imports: [BrowserModule, AppRoutingModule, FormsModule,
-      ReactiveFormsModule
+  declarations: [
+    App,
+    AccountList,
+    AccountDetail,
+    Signals,
+    Empform,
+    Header,
+    EmpReactiveForm,
+    FormBuilderDemo,
   ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
   bootstrap: [App],
 })

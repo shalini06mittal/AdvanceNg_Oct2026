@@ -1,0 +1,67 @@
+<div class="mb-5">
+<h5>Form Group Demo</h5>
+
+<p>Valid: {{profileForm.valid}}</p>
+<p>Status: {{profileForm.status}}</p>
+<p>Values : {{profileForm.value | json}}</p>
+
+<form [formGroup]="profileForm" (submit)="submit()" >
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" id="firstname" class="form-control"
+    formControlName="firstName">
+    <label for="lastName">Last Name</label>
+    <input type="text" name="lastName" id="lastName" class="form-control"
+    formControlName="lastName">
+    <div formGroupName="address">
+        <label for="city">city</label>
+        <input type="text" name="city" id="city" class="form-control"
+        formControlName="city">
+        <label for="country">country</label>
+        <input type="text" name="country" id="country" class="form-control"
+        formControlName="country">
+
+    </div>
+    <div formArrayName="skills">
+        
+        <label for="">Skills</label>
+        <!-- <div *ngFor="let skill of skills.controls; let i = index"> -->
+        @for(skill of skills.controls; let i = $index; track $index) {   
+        <div class="d-flex align-items-center mb-2">
+            <input type="text" [formControlName]="i" class="form-control" [placeholder]=" `Skill ${i+1} :`"/>
+             <button
+                type="button"
+                class="btn btn-danger btn-sm ms-2"
+                (click)="deleteSkill(i)">
+                X
+            </button>
+        </div>
+        }
+        <button class="btn btn-primary mt-3" type="button" (click)="addSkill()">+ Add another skill</button>
+    </div>
+    <div><button type="submit" class="btn btn-primary mt-3" 
+        [disabled]="!profileForm.valid">Register</button></div>
+</form>
+
+<h2>Blog Post Form</h2>
+  <form [formGroup]="postForm">
+        <input type="text" class="form-control mt-2" placeholder="title" name="" formControlName="title" id="">
+        <input type="text" class="form-control mt-2" placeholder="content" name="" formControlName="content" id="">
+        <div>Characters: {{bioLength}}</div>
+        <div class="row mt-2">
+            <div class="col">
+                <button 
+                (click)="loadExistingDraft({title:'some title', content:'some content'})">Load Data</button>
+            </div>
+            
+            <div class="col">
+                    <button class="btn-small"
+                     (click)="setPost()">
+                        Set Post Form Values</button>
+            </div>    
+            <div class="col">
+                 <button class="btn-small" 
+                 (click)="setTitle()">Set Title</button>
+            </div>    
+        </div>
+    </form>
+</div>
