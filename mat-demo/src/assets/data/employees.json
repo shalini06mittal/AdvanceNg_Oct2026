@@ -1,0 +1,41 @@
+{
+  "employees": [
+    {
+      "id": 1, "firstName": "Alice", "lastName": "Johnson",
+      "email": "alice.johnson@example.com", "department": "Engineering",
+      "role": "Senior Developer", "salary": 95000,
+      "joinDate": "2020-03-15", "status": "active",
+      "avatar": "AJ", "skills": ["Angular", "TypeScript", "RxJS"]
+    },
+    {
+      "id": 2, "firstName": "Bob", "lastName": "Smith",
+      "email": "bob.smith@example.com", "department": "Design",
+      "role": "UI/UX Designer", "salary": 78000,
+      "joinDate": "2019-07-22", "status": "active",
+      "avatar": "BS", "skills": ["Figma", "CSS", "Sketch"]
+    },
+    {
+      "id": 3, "firstName": "Carol", "lastName": "White",
+      "email": "carol.white@example.com", "department": "HR",
+      "role": "HR Manager", "salary": 72000,
+      "joinDate": "2018-11-10", "status": "on-leave",
+      "avatar": "CW", "skills": ["Recruitment", "Compliance", "Payroll"]
+    },
+    {
+      "id": 4, "firstName": "David", "lastName": "Lee",
+      "email": "david.lee@example.com", "department": "Engineering",
+      "role": "DevOps Engineer", "salary": 88000,
+      "joinDate": "2021-01-05", "status": "active",
+      "avatar": "DL", "skills": ["Docker", "Kubernetes", "CI/CD"]
+    },
+    {
+      "id": 5, "firstName": "Eva", "lastName": "Martinez",
+      "email": "eva.martinez@example.com", "department": "Finance",
+      "role": "Financial Analyst", "salary": 81000,
+      "joinDate": "2022-06-18", "status": "active",
+      "avatar": "EM", "skills": ["Excel", "SAP", "Power BI"]
+    }
+  ],
+  "departments": ["Engineering","Design","HR","Finance","Marketing"],
+  "stats": { "totalEmployees": 5, "activeCount": 4, "onLeaveCount": 1 }
+}
