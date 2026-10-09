@@ -17,7 +17,7 @@ http = inject(HttpClient);
     this.response$ = this.http
       .get<EmployeeApiResponse>(this.dataUrl)
       .pipe(
-        delay(2000),
+        delay(1000),
         shareReplay(1));
   }
 
@@ -35,7 +35,7 @@ http = inject(HttpClient);
   // }
 
   getById(id: number): Observable<Employee | undefined> {
-    return this.getAll().pipe(delay(2000),map(emp => emp.find(e => e.id === id)));
+    return this.getAll().pipe(delay(1000),map(emp => emp.find(e => e.id === id)));
   }
   getAll(): Observable<Employee[]> {
     return this.getResponse().pipe(map(res => res.employees));

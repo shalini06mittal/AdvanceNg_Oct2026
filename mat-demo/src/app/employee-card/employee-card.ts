@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Employee } from '../models/employee';
 
 @Component({
@@ -11,6 +11,11 @@ export class EmployeeCard {
 
     @Input()
     employee:Employee;
+     @Output() view = new EventEmitter<Employee>();
+  @Output() delete = new EventEmitter<Employee>();
+
+
+  
 
     constructor(){
           this.employee =   {
@@ -30,4 +35,6 @@ export class EmployeeCard {
       }
       return map[this.employee.status] ?? '';
     }
+    onView(){ this.view.emit(this.employee);}
+  onDelete(){this.delete.emit(this.employee);}
 }

@@ -18,19 +18,67 @@
 <mat-icon>accessible_forward</mat-icon>
 
 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon> -->
-<mat-toolbar>
+<!-- <mat-toolbar>
   <span>AM</span>
 
   <span class="example-spacer"></span>
 
   <a mat-button routerLink="employees">Employees</a>
   <a mat-button routerLink="add">Add Employee</a>
-  <!-- <a mat-button>Pricing</a>
-  <a mat-button>About</a> -->
-</mat-toolbar>
+</mat-toolbar> -->
 
+<mat-sidenav-container class="app-container" autosize>
 
-  <router-outlet></router-outlet>
+  <mat-sidenav mode="side" opened #sidenav mode="side" class="sidenav">
+        <div class="sidenav-header">
+                <mat-icon>business</mat-icon>
+                <span>EmDash</span>
+        </div>
+        <mat-nav-list>
+                <a mat-list-item routerLink="/dashboard" routerLinkActive="active-link">
+                         <mat-icon matListItemIcon>dashboard</mat-icon>
+                        <span matListItemTitle>Dashboard</span>
+                </a>
+                <a mat-list-item routerLink="/employees" routerLinkActive="active-link">
+                         <mat-icon matListItemIcon>people</mat-icon>
+                        <span matListItemTitle>Employees</span>
+                </a>
+                <a mat-list-item routerLink="/settings" routerLinkActive="active-link">
+                         <mat-icon matListItemIcon>settings</mat-icon>
+                        <span matListItemTitle>Settings</span>
+                </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+         <div style="padding: 16px;">
+                <mat-slide-toggle
+                        [checked]="themeService.isDarkMode"
+                        (change)="themeService.toggle()"
+                        color="accent">
+                        Dark Mode
+                </mat-slide-toggle>
+        </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+         <mat-toolbar color="primary" class="toolbar">
+                <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Toggle menu">
+                        <mat-icon>menu</mat-icon>
+                </button>
+                <span>Employee Management Dashboard</span>
+                <span class="toolbar-spacer"></span>
+                <button mat-icon-button [matBadge]="notifCount" matBadgeColor="warn" matTooltip="Notifications">
+                        <mat-icon>notifications</mat-icon>
+                </button>
+                <button mat-icon-button matTooltip="My Account">
+                        <mat-icon>account_circle</mat-icon>
+                </button>
+         </mat-toolbar>
+
+        <main class="main-content">
+                <router-outlet></router-outlet>
+        </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
 
 <!-- <app-employee-list></app-employee-list> -->
 <!-- <app-employee-card></app-employee-card> -->

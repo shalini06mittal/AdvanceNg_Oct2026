@@ -83,23 +83,23 @@ export class EmployeeList {
     
 
   }
-  // onDelete(emp:Employee){
-  //   console.log('delete',emp);
-  //   const ref = this.dialog.open(ConfirmDeleteDialog, {
-  //     width: '400px',
-  //     data : {employeeName : `${emp.firstName} ${emp.lastName}`}
-  //   });
-  //   ref.afterClosed().subscribe((confirmed:boolean)=>{
-  //     if(confirmed){
-  //       this.employees = this.employees.filter(e => e.id !== emp.id);
-  //       this.dataSource.data = this.employees;
-  //       this.snackBar.open(`${emp.firstName} has been removed.`, 'Undo', {
-  //         duration: 4000,
-  //         horizontalPosition: 'end',
-  //         verticalPosition: 'bottom',
-  //         panelClass: ['snack-warn'],
-  //       });
-  //     }
-  //   })
-  // }
+  onDelete(emp:Employee){
+    console.log('delete',emp);
+    const ref = this.dialog.open(ConfirmDeleteDialog, {
+      width: '400px',
+      data : {employeeName : `${emp.firstName} ${emp.lastName}`}
+    });
+    ref.afterClosed().subscribe((confirmed:boolean)=>{
+      if(confirmed){
+        this.employees.set(this.employees().filter(e => e.id !== emp.id));
+        this.dataSource.data = this.employees();
+        this.snackBar.open(`${emp.firstName} has been removed.`, 'Undo', {
+          duration: 4000,
+          horizontalPosition: 'end',
+          verticalPosition: 'bottom',
+          panelClass: ['snack-warn'],
+        });
+      }
+    })
+  }
 }
